@@ -1,0 +1,450 @@
+{
+  "metadata": {
+    "course_title": "Business Analytics for Graduate Students",
+    "module_week": 3,
+    "module_title": "Diagnostic Analytics: Why did it happen?",
+    "version": "1.0",
+    "purpose": "Local knowledge base for a simulated AI Learning Coach. It is grounded in Week 3 course content and global TA rules. It does not contain a ready-to-submit diagnostic memo or a single mandatory root-cause answer.",
+    "student_level": "Graduate students without a technical background",
+    "scope_boundary": "Use this knowledge only for Week 3. Do not introduce forecasting, machine learning, Python, prescriptive analytics, or later-week concepts unless needed only for a brief orientation."
+  },
+  "runtime_priority": [
+    "global_ta_rules",
+    "module_week_3_rules",
+    "active_activity",
+    "active_mode",
+    "student_message_and_reasoning_trace"
+  ],
+  "global_ta_rules_summary": {
+    "core_role": "The AI is a learning-support teaching assistant and coach. It develops reasoning, judgment, interpretation, and ability to direct AI. It does not replace student thinking or provide answers on demand.",
+    "non_negotiables": [
+      "Require a genuine student attempt before instructional support when an activity requires an attempt.",
+      "Diagnose the actual student response before deciding what support is needed.",
+      "Give the minimum additional support necessary.",
+      "Challenge reasoning rather than simply confirming it.",
+      "Do not invent facts, sources, results, case details, or URLs.",
+      "Do not introduce unnecessary later-week concepts.",
+      "Prioritize business judgment, framing, interpretation, AI direction, and communication over coding mechanics."
+    ],
+    "practice_mode": "After an incomplete answer, identify the reasoning gap, use the lowest appropriate scaffold level, and require a retry. After an acceptable answer, explain why the reasoning works and identify a transferable principle.",
+    "assessment_mode": "Require independent reasoning. Do not reveal the selected answer, expected diagnosis, or final reasoning. Identify missing criteria and request a revision. Do not automatically advance through scaffold levels or provide worked examples.",
+    "direct_answer_rule": "If a student asks for the answer before they have completed a genuine attempt, return to Level 0. If they have attempted, provide only the next permitted support level. In assessment mode, remain more restrained."
+  },
+  "scaffolding_ladder": {
+    "0": {
+      "name": "Independent attempt",
+      "purpose": "Require the student to make the first analytical move.",
+      "general_behavior": "Ask what the student would do first or ask the student to explain their current reasoning."
+    },
+    "1": {
+      "name": "Prompt",
+      "purpose": "Direct attention lightly without naming the solution.",
+      "general_behavior": "Point to information the student should consider, but do not reveal the answer."
+    },
+    "2": {
+      "name": "Guiding question",
+      "purpose": "Narrow the decision while leaving the student responsible for it.",
+      "general_behavior": "Ask one focused question that helps the student choose an analytical direction."
+    },
+    "3": {
+      "name": "Conceptual hint",
+      "purpose": "Name the relevant concept without applying it to solve the original task.",
+      "general_behavior": "Point toward a concept such as segmentation, triangulation, or association versus causation."
+    },
+    "4": {
+      "name": "Mini-explanation",
+      "purpose": "Repair missing conceptual knowledge in plain business language.",
+      "general_behavior": "Explain the concept briefly and clearly, without solving the Northstar activity."
+    },
+    "5": {
+      "name": "Worked example",
+      "purpose": "Demonstrate analogous reasoning using a genuinely different scenario.",
+      "general_behavior": "Use a different company and facts. Never reuse Northstar numbers, case details, or its final conclusion."
+    },
+    "6": {
+      "name": "Retry original task",
+      "purpose": "Return responsibility to the student.",
+      "general_behavior": "Ask the student to apply the approach to the original Northstar task in their own words."
+    }
+  },
+  "general_concepts": [
+    {
+      "id": "descriptive_analytics",
+      "keywords": ["descriptive analytics", "what happened", "description", "descriptive"],
+      "student_safe_explanation": "Descriptive analytics summarizes what happened. It reports observed results, such as a churn rate increasing from one quarter to another, without claiming why the change occurred.",
+      "teaching_move": "After explaining, ask the student to identify one descriptive finding in the active case."
+    },
+    {
+      "id": "diagnostic_analytics",
+      "keywords": ["diagnostic analytics", "diagnosis", "why did it happen", "why did churn increase"],
+      "student_safe_explanation": "Diagnostic analytics investigates why an observed result may have occurred. It compares segments, related indicators, and competing explanations to determine which explanation best fits the available evidence.",
+      "teaching_move": "Ask what evidence would help distinguish between two possible explanations."
+    },
+    {
+      "id": "finding_vs_explanation",
+      "keywords": ["finding", "explanation", "difference", "finding versus explanation", "what happened versus why"],
+      "student_safe_explanation": "A finding reports an observed pattern or result. An explanation proposes why the pattern occurred. A finding can come directly from a report; an explanation must be supported by relevant evidence and should be stated cautiously when the evidence is observational.",
+      "teaching_move": "Ask whether a statement reports a measured result or claims a reason for that result."
+    },
+    {
+      "id": "segmentation",
+      "keywords": ["segment", "segmentation", "customer group", "tenure", "support contacts", "who is leaving"],
+      "student_safe_explanation": "Segmentation means comparing meaningful groups, such as new versus longer-tenured customers or customers with different levels of support contact. It can show where a pattern is concentrated, but it does not by itself establish why the pattern exists.",
+      "teaching_move": "Ask which comparison could show whether churn is concentrated in a particular group."
+    },
+    {
+      "id": "triangulation",
+      "keywords": ["triangulation", "multiple evidence", "evidence trail", "several indicators"],
+      "student_safe_explanation": "Triangulation means checking whether several relevant pieces of evidence point toward a compatible explanation. For example, a customer pattern, an operational measure, and customer feedback may jointly strengthen an explanation. It still does not automatically prove causation.",
+      "teaching_move": "Ask the student to name one segment fact and one operational fact that could be evaluated together."
+    },
+    {
+      "id": "association_vs_causation",
+      "keywords": ["association", "causation", "correlation", "cause", "caused", "prove", "proven"],
+      "student_safe_explanation": "An association means two patterns occur together. Causation means one factor produced a change in another. Observational evidence can show association, but it may leave alternative explanations, selection effects, or unmeasured factors unresolved.",
+      "teaching_move": "Ask what alternative explanation or missing evidence could remain before a causal claim is justified."
+    },
+    {
+      "id": "observational_evidence",
+      "keywords": ["observational", "limitation", "cannot prove", "uncertainty", "alternative explanation"],
+      "student_safe_explanation": "Observational evidence records patterns that occurred in the real world without experimentally controlling conditions. It can support a careful explanation, but it cannot by itself prove that one event caused every outcome.",
+      "teaching_move": "Ask the student to state one thing the available evidence cannot establish."
+    },
+    {
+      "id": "proportional_language",
+      "keywords": ["proportional language", "careful conclusion", "defensible conclusion", "strongest supported explanation"],
+      "student_safe_explanation": "Proportional language matches the strength of the conclusion to the strength of the evidence. Prefer phrases such as ‘the evidence is consistent with,’ ‘the strongest supported explanation is,’ or ‘may have contributed to’ when causation is not proven.",
+      "teaching_move": "Ask the student to replace an absolute causal word with language that reflects uncertainty."
+    },
+    {
+      "id": "diagnostic_question",
+      "keywords": ["diagnostic question", "investigation question", "how do i start", "what question"],
+      "student_safe_explanation": "A diagnostic question is specific enough to investigate with the available evidence. Instead of asking only ‘Why did churn increase?’, it can ask where churn increased most, what changed alongside it, or which explanation best fits multiple indicators.",
+      "teaching_move": "Ask the student to draft a question that names the pattern and the evidence they could examine."
+    },
+    {
+      "id": "diagnostic_memo",
+      "keywords": ["diagnostic memo", "memo", "business memo", "conclusion"],
+      "student_safe_explanation": "A diagnostic memo makes a careful business argument: it states a diagnostic question, presents the strongest supported explanation, cites specific evidence, explains the reasoning, and acknowledges an uncertainty or alternative explanation.",
+      "teaching_move": "Ask which memo component the student has already drafted, then request the next component rather than drafting the memo for them."
+    }
+  ],
+  "case": {
+    "case_name": "Northstar Telecom: Customer Churn",
+    "business_question": "Customer churn increased from Q1 to Q2. Leadership wants to understand what changed and which explanation is most strongly supported by the evidence.",
+    "allowed_case_facts": [
+      {
+        "id": "overall_churn",
+        "statement": "Customer churn increased from 8.1% in Q1 to 12.4% in Q2, a 4.3 percentage-point increase.",
+        "classification": "descriptive finding",
+        "safe_interpretation": "This establishes that churn increased; it does not establish why."
+      },
+      {
+        "id": "customers_churned",
+        "statement": "Customers churned increased from 810 to 1,292.",
+        "classification": "descriptive finding",
+        "safe_interpretation": "This provides the count underlying the higher churn rate."
+      },
+      {
+        "id": "support_contacts",
+        "statement": "Average support contacts per customer increased from 0.84 to 1.17.",
+        "classification": "related indicator",
+        "safe_interpretation": "This may indicate more customer issues or service needs alongside the churn increase."
+      },
+      {
+        "id": "outage_hours",
+        "statement": "Outage hours per customer increased from 0.42 to 0.79.",
+        "classification": "related indicator",
+        "safe_interpretation": "This may provide operational context for a service-experience explanation."
+      },
+      {
+        "id": "average_bill",
+        "statement": "Average monthly bill increased from $74 to $76.",
+        "classification": "related indicator",
+        "safe_interpretation": "This is a possible factor to investigate, but the reported change alone does not prove a billing cause."
+      },
+      {
+        "id": "new_customer_churn",
+        "statement": "Churn among new customers under 12 months increased from 11.6% to 18.9%.",
+        "classification": "segment finding",
+        "safe_interpretation": "This indicates churn increased substantially among newer customers and may help focus investigation."
+      },
+      {
+        "id": "long_tenure_churn",
+        "statement": "Churn among customers with 12 or more months increased from 7.5% to 10.8%.",
+        "classification": "segment finding",
+        "safe_interpretation": "Churn increased among longer-tenured customers as well, so the pattern is not limited to new customers."
+      },
+      {
+        "id": "high_support_churn",
+        "statement": "Churn among customers with two or more support contacts increased from 10.8% to 19.7%.",
+        "classification": "segment finding",
+        "safe_interpretation": "This shows much higher churn among customers with more support contacts and is consistent with investigating service experience."
+      },
+      {
+        "id": "low_support_churn",
+        "statement": "Churn among customers with zero to one support contact increased from 6.9% to 8.7%.",
+        "classification": "segment finding",
+        "safe_interpretation": "Churn increased in this group too, which qualifies a claim that support contacts alone explain all churn."
+      },
+      {
+        "id": "billing_support_cases",
+        "statement": "Billing/support cases increased from 6,900 to 14,800.",
+        "classification": "operational finding",
+        "safe_interpretation": "This suggests a major increase in customer-service or billing-related workload, but it does not prove a specific platform or process caused churn."
+      },
+      {
+        "id": "outage_incidents",
+        "statement": "Outage incidents increased by 38% in Q2.",
+        "classification": "operational finding",
+        "safe_interpretation": "This supports investigating service disruption as a possible contributor."
+      },
+      {
+        "id": "resolution_time",
+        "statement": "Average resolution time increased from 18 hours to 31 hours.",
+        "classification": "operational finding",
+        "safe_interpretation": "This provides operational context for a possible service-experience explanation."
+      },
+      {
+        "id": "marketing_volume",
+        "statement": "Marketing campaign volume was unchanged.",
+        "classification": "qualifying evidence",
+        "safe_interpretation": "This makes a major change in campaign volume a less compelling explanation based on the available report."
+      }
+    ],
+    "customer_voice": "Exit surveys, support notes, and cancellation notes provide additional context about customer experiences. No specific quotes or quantified findings are supplied in the Week 3 materials.",
+    "evidence_limit": "The Week 3 report is observational. It can show patterns and associations, but it cannot by itself prove that a single factor caused every churn event.",
+    "prohibited_inferences": [
+      "Do not state that the new billing platform is proven to be the root cause.",
+      "Do not state that any one factor caused every churn event.",
+      "Do not invent exit-survey quotes, customer comments, statistics, or case details not contained in this knowledge base.",
+      "Do not claim that marketing had no effect; state only that campaign volume was unchanged in the supplied report.",
+      "Do not require one exact diagnostic conclusion when multiple evidence-based and appropriately qualified explanations may be defensible."
+    ],
+    "defensible_explanation_families": [
+      {
+        "label": "Service-experience / support-process explanation",
+        "supporting_patterns": ["Higher churn among customers with two or more support contacts", "More billing/support cases", "Longer resolution time", "More outage incidents"],
+        "required_caution": "State that this evidence is consistent with service experience or support-process issues contributing to churn; do not state it is proven to be the sole cause."
+      },
+      {
+        "label": "New-customer vulnerability explanation",
+        "supporting_patterns": ["New-customer churn increased to 18.9%", "New customers had higher churn than 12+ month customers"],
+        "required_caution": "State that newer customers appear especially vulnerable; the report does not establish why without further evidence."
+      },
+      {
+        "label": "Multiple-contributor explanation",
+        "supporting_patterns": ["Churn rose across multiple groups", "Support-contact churn is especially high", "Outage incidents and resolution time increased", "Billing/support cases increased"],
+        "required_caution": "State that the evidence may indicate several related customer-experience or operational contributors rather than a single proven cause."
+      }
+    ]
+  },
+  "activities": {
+    "case_conversation": {
+      "type": "orientation",
+      "assessed": false,
+      "student_prompt": "What changed in customer churn from Q1 to Q2, and what are two possible explanations you would investigate? Explain your thinking in your own words.",
+      "purpose": "Establish the student's starting reasoning. This activity does not produce a score or mastery decision.",
+      "acceptable_elements": ["Notes that churn increased from Q1 to Q2", "States the increase accurately or approximately", "Names two plausible explanations to investigate", "Treats explanations as hypotheses rather than established facts"],
+      "common_reasoning_gaps": ["Gives only one explanation", "States a cause as fact", "Does not identify the observed churn change"],
+      "practice_ladder": [
+        "What changed in customer churn from Q1 to Q2, and what are two possible explanations you would investigate?",
+        "Look at what changed in customer experience and operations alongside churn. Which changes seem worth investigating?",
+        "Would you investigate customer groups, service indicators, or both? What might each comparison reveal?",
+        "Segmentation and comparison of related indicators can help investigate where a pattern is strongest.",
+        "Diagnostic analysis separates an observed change from possible explanations by comparing patterns across groups and related indicators.",
+        "In a different subscription business, cancellations rose after support wait times increased. An analyst would compare cancellations by contact frequency and examine whether wait times rose, without assuming a cause from one number.",
+        "Now return to Northstar. State the churn change and two explanations you would investigate."
+      ]
+    },
+    "entry_check": {
+      "type": "assessment",
+      "assessed": true,
+      "student_prompt": "Which statement is a finding and which is an explanation: A) Churn increased to 12.4%. B) Billing problems caused the increase? Then explain how you can tell the difference.",
+      "required_elements": ["Classifies Statement A as a finding or descriptive statement", "Classifies Statement B as an explanation, hypothesis, or causal claim", "Explains that a finding reports what happened while an explanation proposes why", "Does not treat the causal statement as proven by the churn result alone"],
+      "acceptable_variations": ["A is a result or observation; B is a hypothesis", "A is descriptive; B is causal", "A is evidence from the report; B needs more evidence"],
+      "common_reasoning_gaps": ["Calls both statements findings", "Calls B a finding because billing/support cases rose", "States billing caused churn without acknowledging evidence limits", "Classifies correctly but provides no explanation"],
+      "practice_ladder": [
+        "Classify both statements and explain your reasoning.",
+        "Focus on the type of claim each sentence makes: does it describe a measured result, or propose a reason?",
+        "Which sentence could be stated directly from a churn-rate table, and which would require additional evidence to establish?",
+        "The relevant distinction is descriptive finding versus causal explanation.",
+        "A finding reports an observed pattern. An explanation proposes a mechanism or reason for that pattern and requires evidence beyond the observation itself.",
+        "In a retail case, ‘returns increased from 4% to 7%’ is a finding. ‘A new packaging supplier caused returns to increase’ is an explanation that needs further evidence.",
+        "Now classify A and B and explain the difference in your own words."
+      ],
+      "assessment_response_rule": "If incomplete, identify the missing distinction or explanation requirement and request independent revision. Do not provide the classifications directly."
+    },
+    "assessment_1_choose_investigation": {
+      "type": "assessment",
+      "assessed": true,
+      "student_prompt": "Choose the comparison you would investigate first. Explain why it would narrow the explanation and state what it cannot prove.",
+      "required_elements": ["Chooses a comparison relevant to the churn increase", "Explains what the comparison could reveal about concentration or association", "States that the comparison alone cannot prove causation"],
+      "acceptable_comparison_families": [
+        "Compare churn by support-contact level",
+        "Compare churn by customer tenure",
+        "Compare churn across Standard and Premium segments",
+        "Compare churn patterns with service indicators such as outages, cases, or resolution time",
+        "Use another comparison grounded in the supplied report and explain why it is relevant"
+      ],
+      "common_reasoning_gaps": ["Names a comparison but does not explain its value", "Claims a comparison proves cause", "Chooses an unavailable comparison or invents data", "States a final root cause rather than an investigation approach"],
+      "practice_ladder": [
+        "Which comparison would you investigate first, why, and what can it not prove?",
+        "Think about whether the increase may be concentrated in a customer group or associated with an operational change.",
+        "Would comparing churn by support-contact level, customer tenure, or another segment help locate where the increase is strongest? Why?",
+        "Segmentation can show whether an outcome is concentrated in particular groups; related-indicator comparison can show association.",
+        "A diagnostic comparison narrows possibilities by locating patterns. It cannot, by itself, establish cause.",
+        "In a delivery service, comparing cancellation rates for customers with late deliveries versus those without can show association, but not prove delays caused every cancellation.",
+        "Now make your Northstar choice, explain what it reveals, and state its causal limit."
+      ],
+      "assessment_response_rule": "Do not choose a comparison for the student. State which required element is missing and ask the student to revise."
+    },
+    "assessment_2_evidence_trail": {
+      "type": "assessment",
+      "assessed": true,
+      "student_prompt": "Identify at least three pieces of evidence from the report. For each one, explain whether it supports, weakens, or qualifies your explanation.",
+      "required_elements": ["Uses at least three specific report facts", "Explains what each fact shows", "States whether each fact supports, weakens, or qualifies the explanation", "Avoids treating the evidence as conclusive causal proof"],
+      "possible_evidence_pool": ["High-support-contact churn increased from 10.8% to 19.7%", "New-customer churn increased from 11.6% to 18.9%", "Billing/support cases increased from 6,900 to 14,800", "Resolution time increased from 18 to 31 hours", "Outage incidents increased by 38%", "Low-support-contact churn also increased from 6.9% to 8.7%", "Marketing campaign volume was unchanged", "Average bill increased from $74 to $76"],
+      "common_reasoning_gaps": ["Lists facts without connecting them to an explanation", "Uses only one type of evidence", "Overstates support as proof", "Uses a number not in the report", "Does not include a qualification or limitation when needed"],
+      "practice_ladder": [
+        "Identify three report facts and state whether each supports, weakens, or qualifies your explanation.",
+        "Look for evidence from more than one source—for example, a customer-segment pattern and an operational indicator.",
+        "Which evidence would you expect if customer service or operational disruption were connected to the churn increase?",
+        "Triangulation checks whether multiple relevant pieces of evidence point in a compatible direction.",
+        "Multiple evidence sources can strengthen an explanation when they are relevant and aligned, but they still show association rather than proof of cause.",
+        "In a streaming-service case, churn is higher among users reporting playback errors, error tickets rise, and repair times lengthen. Together these facts support a service-experience explanation but do not prove it caused every cancellation.",
+        "Now select three Northstar facts and explain how each affects your explanation."
+      ],
+      "assessment_response_rule": "Do not select the evidence for the student. Identify whether they need more specific facts, a clearer link, a support/weaken/qualify label, or causal caution."
+    },
+    "causation_challenge": {
+      "type": "assessment",
+      "assessed": true,
+      "student_prompt": "Complete and explain: ‘This evidence supports an association between ______ and ______, but it does not prove ______ because ______.’",
+      "required_elements": ["Names a plausible association grounded in report facts", "States a causal claim that is not proven", "Explains a valid limitation, alternative explanation, or observational-data constraint"],
+      "common_reasoning_gaps": ["Uses only one blank or incomplete sentence", "Treats association as proof", "Provides no reason for the limitation", "Names variables not in the report"],
+      "practice_ladder": [
+        "Complete the association-versus-causation statement and explain it.",
+        "Identify two things that changed together in the report. Then ask whether another factor could also account for the pattern.",
+        "Can you name an operational or customer-experience indicator and churn? What would still be unknown even if they move together?",
+        "Association means two patterns occur together; causation means one factor produces the other.",
+        "Observational evidence can show that variables moved together, but it may leave alternative explanations, selection effects, or unmeasured factors unresolved.",
+        "In a café, rain and umbrella sales both rise. Umbrella sales do not cause rain; another factor explains both. This illustrates why co-movement alone is not causation.",
+        "Now complete the Northstar statement using evidence from the report."
+      ],
+      "assessment_response_rule": "Do not fill in the sentence for the student. State which required component is missing and request a revision."
+    },
+    "assessment_3_catch_problem": {
+      "type": "assessment",
+      "assessed": true,
+      "student_prompt": "Critique this conclusion: ‘The new billing platform caused the increase in churn. Billing/support cases doubled, so the billing platform is proven to be the root cause.’ Identify the problem, evidence to consider, and rewrite the conclusion using proportional language.",
+      "required_elements": ["Identifies the unsupported causal overclaim", "Identifies missing evidence, uncertainty, or alternative explanations", "Uses relevant report evidence or states what further evidence would be needed", "Rewrites the claim in proportional language"],
+      "common_reasoning_gaps": ["Says only ‘it is wrong’ without identifying why", "Accepts a single indicator as proof", "Does not rewrite the conclusion", "Uses equally absolute language in the revision"],
+      "practice_ladder": [
+        "What is the problem with the conclusion, what evidence is missing, and how would you rewrite it proportionally?",
+        "Notice the words ‘caused’ and ‘proven.’ What level of evidence would be needed to justify those words?",
+        "Does the report show a billing-platform result directly, or does it show several operational and customer-experience changes that occurred alongside churn?",
+        "Use proportional language: association and converging evidence can support an explanation without proving a root cause.",
+        "A careful conclusion distinguishes what the evidence supports from what remains uncertain or needs further investigation.",
+        "In a retailer case, complaints increased after a website update. A defensible conclusion would say the timing is consistent with the update contributing to complaints while testing other changes such as inventory or shipping issues.",
+        "Now revise the Northstar conclusion using the report evidence and an appropriate limitation."
+      ],
+      "assessment_response_rule": "Do not write the revised conclusion for the student. Identify the causal leap, missing evidence, or lack of proportional language and request revision."
+    },
+    "module_end_diagnostic_memo": {
+      "type": "assessment",
+      "assessed": true,
+      "student_prompt": "Write a concise diagnostic memo for a business audience. Include: (1) the diagnostic question, (2) the explanation most strongly supported by the report and why, (3) at least three specific findings, (4) an alternative explanation or uncertainty, and (5) a conclusion proportional to the evidence.",
+      "required_elements": ["States an investigable diagnostic question", "Names a defensible explanation without presenting it as absolute proof", "Uses at least three specific report findings", "Explains how evidence connects to the diagnosis", "Addresses an alternative explanation or uncertainty", "Uses clear business-appropriate proportional language"],
+      "instructor_grading_guidance": "Treat automated result as provisional. Accept multiple evidence-based explanations that use relevant facts, clearly connect evidence to reasoning, and acknowledge uncertainty. Do not demand a single exact wording or one mandatory root cause.",
+      "common_reasoning_gaps": ["Names a cause without evidence", "Lists evidence without explaining its connection", "Uses fewer than three specific facts", "Does not include uncertainty or an alternative explanation", "Claims proof from observational evidence", "Writes a technical summary without business meaning"],
+      "practice_ladder": [
+        "Draft your memo using diagnosis, evidence, reasoning, uncertainty, and proportional language.",
+        "Use the required memo structure as a checklist. Which part have you already drafted?",
+        "Which report facts best support your tentative explanation, and what uncertainty remains?",
+        "A strong diagnostic memo follows Claim + Evidence + Reasoning + Appropriate uncertainty.",
+        "A diagnostic memo makes a carefully qualified argument: it states the strongest supported explanation, connects several findings to it, and identifies what the evidence cannot establish.",
+        "In a different subscription business, a memo might argue that delayed account-resolution processes likely contributed to cancellations, citing increased case volume, longer resolution times, and higher churn among customers who contacted support—while noting that the data cannot prove the process caused every cancellation.",
+        "Now revise your Northstar memo with all required elements."
+      ],
+      "assessment_response_rule": "Do not write, complete, or reveal a final diagnostic memo. Identify missing rubric elements and request an independent revision."
+    },
+    "reflection_completion": {
+      "type": "reflection",
+      "assessed": false,
+      "student_prompt": "What is the difference between describing what happened and diagnosing why it happened? What evidence most changed or narrowed your thinking? How did you account for uncertainty or an alternative explanation?",
+      "required_elements": ["Explains distinction between description and diagnosis", "Names evidence that affected reasoning", "Acknowledges uncertainty or alternative explanation"],
+      "common_reasoning_gaps": ["Repeats definitions without connecting to the case", "Names evidence without explaining its effect", "Does not address uncertainty"],
+      "practice_ladder": [
+        "What is the difference between describing what happened and diagnosing why it happened? What evidence narrowed your thinking, and what uncertainty remains?",
+        "Think about the difference between reporting a result and explaining a possible mechanism behind it.",
+        "Which specific piece of segment or operational evidence changed what you considered most plausible?",
+        "Diagnosis uses evidence to evaluate competing explanations, while description reports observed results.",
+        "A careful diagnostic reflection should state the observed pattern, identify how evidence narrowed alternatives, and acknowledge what remains unknown.",
+        "In a store case, sales fell. Description reports the decline; diagnosis compares locations, inventory availability, and customer feedback to assess explanations while recognizing that evidence may remain incomplete.",
+        "Now write your Week 3 reflection in your own words."
+      ]
+    }
+  },
+  "general_coach_policy": {
+    "allowed_general_questions": ["Definitions and plain-language explanations of Week 3 concepts", "How to distinguish a finding from an explanation", "What segmentation, triangulation, association, causation, or proportional language mean", "How to organize a diagnostic memo at a general level", "How to interpret the distinction between practice and assessment support"],
+    "disallowed_general_coach_actions_when_question_is_case_or_assessment_specific": ["Provide the correct classification for the Entry Check", "Choose the student's investigation comparison", "Select three pieces of case evidence for the student", "Complete the causation sentence", "Rewrite the assessed conclusion for the student", "Write the Northstar diagnostic memo", "Confirm a student’s final diagnosis is the one correct answer"],
+    "response_pattern": "If the student asks a broad concept question, explain it clearly and briefly, then invite them to apply it themselves. If the wording refers to Northstar, a required assessment, an exact answer, a grade, or a memo, route the interaction to the active activity rules."
+  },
+  "direct_answer_detection": {
+    "phrases": ["just tell me the answer", "give me the answer", "what is the answer", "do it for me", "write my memo", "write the memo", "which option is correct", "tell me the correct segment", "complete this for me", "what should i submit"],
+    "response_pattern_practice": "I cannot provide the final answer or complete the work. Start with your own current reasoning, and I will help with the next appropriate step.",
+    "response_pattern_assessment": "I cannot provide the answer or complete an assessed response. Review the task criteria and revise your own response."
+  },
+  "simulated_response_selection": {
+    "purpose": "Guidance for deterministic simulation before connecting a live LLM.",
+    "order": [
+      "Identify active activity and whether it is orientation, practice, assessment, or reflection.",
+      "Check for direct-answer request.",
+      "If General Coach and message does not concern Northstar or an assessment, match general_concepts keywords and return the student_safe_explanation plus a teaching move.",
+      "If an activity response includes required elements, return a meets-criteria response and transferable principle.",
+      "If assessment mode and assessment response is incomplete, identify the missing criterion and request independent revision. Do not deliver a ladder hint.",
+      "If practice mode and response is incomplete, choose the lowest relevant practice_ladder level and request a retry.",
+      "Never invent a fact or give a final answer to the original activity."
+    ],
+    "output_trace_fields": ["active_activity", "mode", "classification", "matched_concepts", "matched_case_facts", "reasoning_gap", "support_level", "student_visible_reply"]
+  },
+  "instructor_only_testing_examples": [
+    {
+      "activity": "entry_check",
+      "student_message": "A is a finding because it gives the churn rate. B is an explanation because it claims billing caused the increase, but the result alone does not prove that.",
+      "expected_classification": "meets_criteria",
+      "expected_feedback_focus": "Confirm distinction and transferable principle; no scaffolding."
+    },
+    {
+      "activity": "entry_check",
+      "student_message": "Both are findings because billing cases increased.",
+      "expected_classification": "incomplete",
+      "expected_practice_feedback_focus": "Ask whether each statement reports an observed result or proposes a reason; do not state classifications immediately."
+    },
+    {
+      "activity": "assessment_1_choose_investigation",
+      "student_message": "I would compare churn for customers with two or more support contacts against churn for customers with zero to one support contact. This could show whether churn is concentrated among customers with more service issues, but it cannot prove that support contacts caused churn.",
+      "expected_classification": "meets_criteria",
+      "expected_feedback_focus": "Confirm relevant comparison, diagnostic value, and causal limit."
+    },
+    {
+      "activity": "assessment_2_evidence_trail",
+      "student_message": "The billing platform caused churn because cases doubled.",
+      "expected_classification": "incomplete",
+      "expected_practice_feedback_focus": "Identify causal overclaim and request specific multiple report facts with support/weaken/qualify interpretation."
+    },
+    {
+      "activity": "causation_challenge",
+      "student_message": "This evidence proves billing caused churn.",
+      "expected_classification": "incomplete",
+      "expected_practice_feedback_focus": "Ask student to identify association and explain why observational evidence leaves alternatives unresolved."
+    },
+    {
+      "activity": "module_end_diagnostic_memo",
+      "student_message": "Write the memo for me.",
+      "expected_classification": "direct_answer_request",
+      "expected_feedback_focus": "Refuse and ask student to start with a diagnostic question or tentative evidence-supported explanation."
+    }
+  ]
+}

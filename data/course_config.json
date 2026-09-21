@@ -1,0 +1,398 @@
+{
+  "course_title": "Business Analytics for Graduate Students",
+  "weeks": [
+    {
+      "week": 1,
+      "hours": 2,
+      "topic": "Course Introduction & Foundations of Business Analytics",
+      "document": "Orientation; annual report/10-K in class",
+      "ai": "Introduction to AI-native environment"
+    },
+    {
+      "week": 2,
+      "hours": 2,
+      "topic": "Descriptive Analytics \u2014 What happened?",
+      "document": "Messy sales/operations spreadsheet",
+      "ai": "AI used to clean and summarize data"
+    },
+    {
+      "week": 3,
+      "hours": 2,
+      "topic": "Diagnostic Analytics \u2014 Why did it happen?",
+      "document": "Customer churn report",
+      "ai": "AI-guided root-cause investigation"
+    },
+    {
+      "week": 4,
+      "hours": 2,
+      "topic": "Data Storytelling & Visualization",
+      "document": "Quarterly business report",
+      "ai": "AI-assisted chart generation"
+    },
+    {
+      "week": 5,
+      "hours": 2,
+      "topic": "Predictive Analytics I \u2014 Concepts",
+      "document": "Sales/demand history file",
+      "ai": "Forecasting logic in plain language"
+    },
+    {
+      "week": 6,
+      "hours": 2,
+      "topic": "Predictive Analytics II \u2014 AI-Assisted Forecasting",
+      "document": "Forecasting dataset",
+      "ai": "Prompt AI to build and explain forecast"
+    },
+    {
+      "week": 7,
+      "hours": 2,
+      "topic": "Prescriptive Analytics \u2014 What should we do?",
+      "document": "Operations or pricing decision brief",
+      "ai": "Evaluate options against constraints"
+    },
+    {
+      "week": 8,
+      "hours": 2,
+      "topic": "Intro to Machine Learning Concepts via AI",
+      "document": "Customer churn report revisited",
+      "ai": "Interpret AI-built classification model"
+    },
+    {
+      "week": 9,
+      "hours": 2,
+      "topic": "Machine Learning, Critiqued",
+      "document": "Extended churn dataset",
+      "ai": "Critique and refine AI model choices"
+    },
+    {
+      "week": 10,
+      "hours": 2,
+      "topic": "Python with AI Assistance I",
+      "document": "Customer transaction data",
+      "ai": "AI-generated segmentation code"
+    },
+    {
+      "week": 11,
+      "hours": 2,
+      "topic": "Python with AI Assistance II",
+      "document": "Extended transaction dataset",
+      "ai": "Debug AI-generated code through AI"
+    },
+    {
+      "week": 12,
+      "hours": 2,
+      "topic": "Marketing & Customer Analytics",
+      "document": "Campaign performance report",
+      "ai": "Segmentation and targeting proposal"
+    },
+    {
+      "week": 13,
+      "hours": 2,
+      "topic": "Supply Chain / Operations Analytics",
+      "document": "Procurement or inventory report",
+      "ai": "Inefficiency analysis"
+    },
+    {
+      "week": 14,
+      "hours": 2,
+      "topic": "Ethics, Bias, and Responsible AI",
+      "document": "Algorithmic decision case",
+      "ai": "Discuss limitations and safeguards"
+    },
+    {
+      "week": 15,
+      "hours": 4,
+      "topic": "Applied Capstone Case",
+      "document": "Multi-document team case",
+      "ai": "Assessment-mode transfer across analytics types"
+    }
+  ],
+  "activities": [
+    {
+      "id": "case",
+      "title": "Case Conversation",
+      "type": "orientation",
+      "prompt": "What changed in customer churn from Q1 to Q2, and what are two possible explanations you would investigate? Explain your thinking in your own words.",
+      "criteria": [
+        "This is orientation only; no score is assigned.",
+        "Accurately identifies churn increased from 8.1% to 12.4%.",
+        "Proposes two plausible investigable explanations."
+      ],
+      "keywords": [
+        "8.1",
+        "12.4",
+        "churn",
+        "support",
+        "billing",
+        "outage",
+        "service",
+        "customer"
+      ],
+      "keyword_threshold": 3,
+      "responses": {
+        "correct": "You have made a useful starting attempt. You identified the observed churn increase and proposed investigable explanations. Keep them as hypotheses; the next steps test them against the report.",
+        "incomplete": "Start with the finding. What happened to churn from Q1 to Q2? Then name two different explanations you would investigate rather than assume one is true.",
+        "direct": "This opening conversation is for your first reasoning move. What changed in churn, and what two explanations would you investigate?"
+      },
+      "ladder": [
+        "What changed in customer churn from Q1 to Q2, and what are two possible explanations you would investigate?",
+        "Look at what changed in customer experience and operations alongside churn. Which changes seem worth investigating?",
+        "Would you investigate customer groups, service indicators, or both? What might each comparison reveal?",
+        "Segmentation and comparison of related indicators can help investigate where a pattern is strongest.",
+        "Diagnostic analysis separates an observed change from possible explanations by comparing patterns across groups and related indicators.",
+        "In a different subscription business, cancellations rose after support wait times increased. An analyst would compare cancellations by contact frequency and whether wait times rose, without assuming cause from one number.",
+        "Now return to Northstar. State the churn change and two explanations you would investigate."
+      ]
+    },
+    {
+      "id": "entry",
+      "title": "Entry Check \u2014 Finding vs. Explanation",
+      "type": "assessment",
+      "prompt": "Which statement is a finding and which is an explanation? A) \u201cChurn increased to 12.4%.\u201d B) \u201cBilling problems caused the increase.\u201d Then explain how you can tell the difference.",
+      "criteria": [
+        "Labels A as a finding or descriptive statement.",
+        "Labels B as an explanation, hypothesis, or causal claim.",
+        "Explains that a finding reports what happened while an explanation proposes why.",
+        "Does not treat the causal statement as proven by the churn result alone."
+      ],
+      "keywords": [
+        "finding",
+        "explanation",
+        "describ",
+        "what happened",
+        "cause",
+        "causal"
+      ],
+      "keyword_threshold": 3,
+      "responses": {
+        "correct": "Meets criteria. You correctly separated an observed finding from a causal explanation. Transferable principle: data can show what changed; additional evidence is needed to support why it changed.",
+        "incomplete": "Your response needs a clearer distinction between an observed result and a claim about cause. Re-read the statements: which reports a number, and which makes a \u201cbecause\u201d claim?",
+        "direct": "I cannot provide the classification for an assessed checkpoint. Read each statement closely: does it report an observed pattern, or claim why the pattern occurred?"
+      },
+      "ladder": [
+        "Classify both statements and explain your reasoning.",
+        "Focus on the type of claim each sentence makes: does it describe a measured result, or propose a reason?",
+        "Which sentence could be stated directly from a churn-rate table, and which would require additional evidence?",
+        "The relevant distinction is descriptive finding versus causal explanation.",
+        "A finding reports an observed pattern. An explanation proposes a mechanism or reason and requires evidence beyond the observation itself.",
+        "In a retail case, \u201creturns increased from 4% to 7%\u201d is a finding. \u201cA new packaging supplier caused returns to increase\u201d is an explanation needing further evidence.",
+        "Now classify A and B and explain the difference in your own words."
+      ]
+    },
+    {
+      "id": "investigation",
+      "title": "Required Assessment 1 \u2014 Choose the Investigation",
+      "type": "assessment",
+      "prompt": "Choose the comparison you would investigate first. Explain why it would narrow the explanation and state what it cannot prove.",
+      "criteria": [
+        "Selects a relevant comparison.",
+        "Explains what comparison could reveal about concentration or association.",
+        "States comparison alone cannot prove causation."
+      ],
+      "keywords": [
+        "compar",
+        "segment",
+        "support",
+        "tenure",
+        "reveal",
+        "cannot prove",
+        "caus"
+      ],
+      "keyword_threshold": 3,
+      "responses": {
+        "correct": "Meets criteria. Your comparison is relevant, explains what it may reveal, and acknowledges its limit. Transferable principle: a diagnostic comparison can narrow an explanation without proving it.",
+        "incomplete": "Your response needs all three parts: a comparison, what it could reveal, and a limit on what it can prove. Which part is missing?",
+        "direct": "I cannot choose the comparison for an assessed checkpoint. Select a comparison you believe narrows the explanation, then state what it could reveal and what it cannot prove."
+      },
+      "ladder": [
+        "Which comparison would you investigate first, why, and what can it not prove?",
+        "Think about whether increase may be concentrated in a customer group or associated with an operational change.",
+        "Would comparing churn by support-contact level, customer tenure, or another segment help locate where the increase is strongest? Why?",
+        "Segmentation can show whether an outcome is concentrated in particular groups; related-indicator comparison can show association.",
+        "A diagnostic comparison narrows possibilities by locating patterns. It cannot by itself establish cause.",
+        "In a delivery service, comparing cancellation rates for customers with late deliveries versus those without can show association, but not prove delays caused every cancellation.",
+        "Now make your Northstar choice, explain what it reveals, and state its causal limit."
+      ]
+    },
+    {
+      "id": "evidence",
+      "title": "Required Assessment 2 \u2014 Build the Evidence Trail",
+      "type": "assessment",
+      "prompt": "Identify at least three pieces of evidence from the report. For each, explain whether it supports, weakens, or qualifies your explanation.",
+      "criteria": [
+        "Uses at least three specific facts.",
+        "Explains diagnostic relevance of each fact.",
+        "Uses support, weaken, or qualify appropriately.",
+        "Avoids causal proof claims."
+      ],
+      "keywords": [
+        "support",
+        "resolution",
+        "14800",
+        "14,800",
+        "19.7",
+        "18.9",
+        "outage",
+        "qualif",
+        "weaken"
+      ],
+      "keyword_threshold": 3,
+      "responses": {
+        "correct": "Meets criteria. You built an evidence trail using specific facts and explained how they affect your explanation. Transferable principle: diagnosis is stronger when multiple relevant indicators converge while uncertainty remains visible.",
+        "incomplete": "Your evidence trail needs more specificity or clearer links. Identify a report fact, say what it shows, then state whether it supports, weakens, or qualifies your explanation.",
+        "direct": "I cannot select the three pieces of evidence for an assessed checkpoint. Return to the report and choose specific segment and operational facts you can connect to your explanation."
+      },
+      "ladder": [
+        "Identify three report facts and state whether each supports, weakens, or qualifies your explanation.",
+        "Look for evidence from more than one source\u2014for example, a customer segment pattern and an operational indicator.",
+        "Which evidence would you expect if customer service or operational disruption were connected to churn?",
+        "Triangulation checks whether multiple relevant pieces of evidence point in a compatible direction.",
+        "Multiple evidence sources can strengthen an explanation when relevant and aligned, but they show association rather than proof.",
+        "In a streaming-service case, churn is higher among users reporting playback errors, error tickets rise, and repair times lengthen. These support a service-experience explanation but do not prove it caused every cancellation.",
+        "Now select three Northstar facts and explain how each affects your explanation."
+      ]
+    },
+    {
+      "id": "causation",
+      "title": "Causation Challenge",
+      "type": "assessment",
+      "prompt": "Complete and explain: \u201cThis evidence supports an association between _____ and _____, but it does not prove _____ because _____.\u201d",
+      "criteria": [
+        "Names a plausible report-grounded association.",
+        "States a causal claim not proven.",
+        "Explains valid limitation, alternative explanation, or observational-data constraint."
+      ],
+      "keywords": [
+        "association",
+        "does not prove",
+        "caus",
+        "observ",
+        "alternative",
+        "because"
+      ],
+      "keyword_threshold": 3,
+      "responses": {
+        "correct": "Meets criteria. You used appropriate causal caution by identifying an association and explaining why it does not establish proof. Transferable principle: observational patterns can support an explanation without demonstrating causation.",
+        "incomplete": "Your sentence needs an association, an unproven causal claim, and a reason the evidence is limited. What alternative explanation or missing information could remain?",
+        "direct": "I cannot complete the assessed sentence for you. Choose two variables that moved together, then explain why observational evidence alone cannot establish cause."
+      },
+      "ladder": [
+        "Complete the association-versus-causation statement and explain it.",
+        "Identify two things that changed together. Then ask whether another factor could account for the pattern.",
+        "Can you name an operational/customer-experience indicator and churn? What would still be unknown even if they move together?",
+        "Association means patterns occur together; causation means one produces the other.",
+        "Observational evidence can show variables moved together but may leave alternative explanations or unmeasured factors unresolved.",
+        "In a caf\u00e9, rain and umbrella sales both rise. Umbrella sales do not cause rain; another factor explains both.",
+        "Now complete the Northstar statement using evidence from the report."
+      ]
+    },
+    {
+      "id": "critique",
+      "title": "Required Assessment 3 \u2014 Catch the Problem",
+      "type": "assessment",
+      "prompt": "Critique: \u201cThe new billing platform caused the increase in churn. Billing/support cases doubled, so the billing platform is proven to be the root cause.\u201d Identify the problem, evidence to consider, and rewrite using proportional language.",
+      "criteria": [
+        "Identifies unsupported causal overclaim.",
+        "Identifies missing evidence, uncertainty, or alternative explanations.",
+        "Uses relevant report evidence or identifies needed evidence.",
+        "Rewrites with proportional language."
+      ],
+      "keywords": [
+        "not prove",
+        "caus",
+        "association",
+        "alternative",
+        "uncertain",
+        "evidence",
+        "consistent"
+      ],
+      "keyword_threshold": 3,
+      "responses": {
+        "correct": "Meets criteria. You identified an overclaim, considered uncertainty, and used proportional language. Transferable principle: a defensible diagnosis is the explanation that best fits evidence\u2014not the most confident statement.",
+        "incomplete": "Your critique should address the causal leap, missing/alternative evidence, and a more careful rewrite. Which piece is absent?",
+        "direct": "I cannot rewrite the assessed conclusion for you. First identify what claim goes beyond evidence; then state what evidence or alternative explanation must be considered."
+      },
+      "ladder": [
+        "What is the problem with the conclusion, what evidence is missing, and how would you rewrite it proportionally?",
+        "Notice \u201ccaused\u201d and \u201cproven.\u201d What evidence would justify those words?",
+        "Does the report show a billing-platform result directly, or several operational and experience changes alongside churn?",
+        "Use proportional language: converging evidence can support an explanation without proving a root cause.",
+        "A careful conclusion distinguishes what evidence supports from what remains uncertain.",
+        "In a retailer case, complaints rose after a website update. A defensible conclusion says timing is consistent with the update contributing while testing inventory and shipping alternatives.",
+        "Now revise the Northstar conclusion using report evidence and an appropriate limitation."
+      ]
+    },
+    {
+      "id": "memo",
+      "title": "Module-End Assessment \u2014 Northstar Diagnostic Memo",
+      "type": "assessment",
+      "prompt": "Write a concise diagnostic memo for a business audience. Include: (1) diagnostic question, (2) explanation most supported and why, (3) at least three specific findings, (4) alternative explanation or uncertainty, and (5) conclusion proportional to evidence.",
+      "criteria": [
+        "States an investigable diagnostic question.",
+        "Names a defensible explanation without presenting absolute proof.",
+        "Uses at least three specific findings.",
+        "Explains evidence-to-diagnosis reasoning.",
+        "Addresses alternative explanation or uncertainty.",
+        "Uses business-appropriate proportional language."
+      ],
+      "keywords": [
+        "diagnostic",
+        "evidence",
+        "uncertain",
+        "alternative",
+        "support",
+        "churn",
+        "resolution",
+        "case"
+      ],
+      "keyword_threshold": 3,
+      "responses": {
+        "correct": "Provisional mastery: the memo meets prototype criteria. It states a defensible explanation, uses evidence, shows reasoning, and acknowledges uncertainty. An instructor should review this rubric-based result before recording a final grade.",
+        "incomplete": "Your memo is missing one or more elements. Check for a diagnostic question, three specific facts, evidence-to-explanation reasoning, and an uncertainty or alternative explanation.",
+        "direct": "I cannot write the diagnostic memo for you. Begin with your diagnostic question and tentative evidence-supported explanation, then add three report facts and one limitation."
+      },
+      "ladder": [
+        "Draft your memo using diagnosis, evidence, reasoning, uncertainty, and proportional language.",
+        "Use the required memo structure as a checklist. Which part have you already drafted?",
+        "Which report facts support your tentative explanation, and what uncertainty remains?",
+        "A strong diagnostic memo follows Claim + Evidence + Reasoning + Appropriate uncertainty.",
+        "A diagnostic memo states the strongest supported explanation, connects several findings, and identifies what evidence cannot establish.",
+        "In another subscription business, a memo might say delayed account-resolution processes likely contributed to cancellations, citing increased case volume, longer resolution times, and higher churn among support users while noting data cannot prove cause for every cancellation.",
+        "Now revise your Northstar memo with all required elements."
+      ]
+    },
+    {
+      "id": "reflection",
+      "title": "Reflection & Completion",
+      "type": "reflection",
+      "prompt": "Respond in your own words: What is the difference between describing what happened and diagnosing why it happened? What evidence most narrowed your thinking? How did you account for uncertainty or an alternative explanation?",
+      "criteria": [
+        "Explains description versus diagnosis.",
+        "Names evidence affecting reasoning.",
+        "Acknowledges uncertainty or alternative explanation."
+      ],
+      "keywords": [
+        "what happened",
+        "why",
+        "evidence",
+        "uncertain",
+        "alternative"
+      ],
+      "keyword_threshold": 3,
+      "responses": {
+        "correct": "Reflection complete. You explained the shift from describing a pattern to diagnosing an explanation and acknowledged uncertainty.",
+        "incomplete": "Your reflection needs more reasoning. Explain difference between what happened and why, then identify evidence and a remaining uncertainty.",
+        "direct": "This reflection is about your own reasoning. Start with one sentence explaining difference between a finding and a diagnostic explanation."
+      },
+      "ladder": [
+        "What is the difference between describing what happened and diagnosing why it happened? What evidence narrowed thinking, and what uncertainty remains?",
+        "Think about reporting a result versus explaining a possible mechanism.",
+        "Which specific segment or operational evidence changed what you considered plausible?",
+        "Diagnosis uses evidence to evaluate competing explanations; description reports observed results.",
+        "A diagnostic reflection should state observed pattern, identify how evidence narrowed alternatives, and acknowledge what remains unknown.",
+        "In a store case, sales fell. Description reports decline; diagnosis compares locations, inventory, and feedback while recognizing incomplete evidence.",
+        "Now write your Week 3 reflection in your own words."
+      ]
+    }
+  ]
+}
