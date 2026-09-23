@@ -573,29 +573,34 @@ def chat(payload: ChatRequest):
             }
         }
 
-if (
+    if (
         payload.mode == "assessment"
         and activity["type"] == "assessment"
     ):
+        rubric = load_assessment_rubric()
+        scaffolds = load_assessment_scaffolds()
+
+        coach_response = choose_assessment_coach_response(
+            message,
+            evaluation,
+            rubric,
+            scaffolds
+        )
+
         return {
-            "reply": (
-                "Assessment mode: "
-                + activity["responses"]["incomplete"]
-                + " Please revise independently. The coach can identify that "
-                "a requirement is missing, but it will not provide a hint, "
-                "select evidence, or provide the final answer for this checkpoint."
-            ),
-            "status": "revision_needed",
-            "level": 0,
+            "reply": coach_response["reply"],
+            "status": "assessment_coach",
+            "level": coach_response["level"],
             "trace": {
-                "reasoning_gap": "Incomplete assessment response",
+                "reasoning_gap": coach_response["priority_gap"],
                 "matched_concepts": [],
                 "matched_case_facts": evaluation[
                     "matched_case_facts"
                 ],
                 "matched_criteria": evaluation[
                     "matched_criteria"
-                ]
+                ],
+                "assessment_coach": True
             }
         }
 
