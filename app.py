@@ -12,6 +12,8 @@ BASE = Path(__file__).resolve().parent
 CONFIG_PATH = BASE / "data" / "course_config.json"
 KNOWLEDGE_PATH = BASE / "data" / "week3_knowledge_base.json"
 ENCYCLOPEDIA_PATH = BASE / "data" / "week3_concept_encyclopedia.json"
+ASSESSMENT_RUBRIC_PATH = BASE / "data" / "week3_assessment_rubric.json"
+ASSESSMENT_SCAFFOLDS_PATH = BASE / "data" / "week3_assessment_scaffolds.json"
 
 app = FastAPI(
     title="Business Analytics LMS — Week 3 Prototype"
