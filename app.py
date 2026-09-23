@@ -47,6 +47,14 @@ def load_encyclopedia():
     return load_json(ENCYCLOPEDIA_PATH)
 
 
+def load_assessment_rubric():
+    return load_json(ASSESSMENT_RUBRIC_PATH)
+
+
+def load_assessment_scaffolds():
+    return load_json(ASSESSMENT_SCAFFOLDS_PATH)
+
+
 def save_config(config: dict):
     with CONFIG_PATH.open("w", encoding="utf-8") as file:
         json.dump(config, file, indent=2, ensure_ascii=False)
