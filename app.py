@@ -573,10 +573,7 @@ def chat(payload: ChatRequest):
             }
         }
 
-    if (
-        payload.mode == "assessment"
-        and activity["type"] == "assessment"
-    ):
+    if activity["type"] == "assessment":
         rubric = load_assessment_rubric()
         scaffolds = load_assessment_scaffolds()
 
