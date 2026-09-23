@@ -344,6 +344,75 @@ def evaluate_simulated_response(
     }
 
 
+def choose_assessment_coach_response(
+    message: str,
+    evaluation: dict,
+    rubric: dict,
+    scaffolds: dict
+):
+    criteria = rubric.get("criteria", [])
+    matched_text = " ".join(
+        evaluation.get("matched_criteria", [])
+    ).lower()
+
+    priority_criterion = None
+
+    for criterion in criteria:
+        criterion_id = criterion.get("id", "")
+        criterion_label = criterion.get("label", "").lower()
+
+        if (
+            criterion_id not in matched_text
+            and criterion_label not in matched_text
+        ):
+            priority_criterion = criterion
+            break
+
+    if priority_criterion is None and criteria:
+        priority_criterion = criteria[0]
+
+    priority_id = (
+        priority_criterion.get("id", "reasoning")
+        if priority_criterion
+        else "reasoning"
+    )
+
+    priority_label = (
+        priority_criterion.get("label", "reasoning")
+        if priority_criterion
+        else "reasoning"
+    )
+
+    level = "1"
+
+    if priority_id == "causal_discipline":
+        level = "3"
+    elif priority_id in {
+        "diagnostic_framing",
+        "evidence_use",
+        "next_step"
+    }:
+        level = "2"
+
+    scaffold = scaffolds.get("levels", {}).get(level, {})
+    scaffold_message = scaffold.get(
+        "template",
+        "Review your response and make one part of your reasoning more specific."
+    )
+
+    return {
+        "level": int(level),
+        "priority_gap": priority_label,
+        "reply": (
+            "Assessment-Coach feedback: Your response needs a clearer "
+            + priority_label.lower()
+            + " step before it can meet the assessment criteria.\n\n"
+            + scaffold_message
+        )
+    }
+
+
+
 def general_concept_reply(concept: dict):
     reply = concept.get(
         "plain_language_definition",
