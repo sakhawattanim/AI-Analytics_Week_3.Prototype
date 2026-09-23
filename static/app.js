@@ -107,7 +107,7 @@ async function send(id) {
         body: JSON.stringify({
             activity_id: id,
             message: message,
-            mode: mode,
+            mode: item.type === "assessment" ? "assessment" : mode,
             chat_type: "activity"
         })
     });
