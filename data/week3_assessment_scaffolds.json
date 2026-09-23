@@ -1,0 +1,52 @@
+{
+  "activity_id": "week3_diagnostic_assessment",
+  "title": "Week 3 Assessment-Coach Scaffold Ladder",
+  "assessment_mode_defaults": {
+    "default_allowed_levels": [0, 1, 2, 3],
+    "level_4_and_5_require_activity_permission": true,
+    "one_priority_gap_per_response": true,
+    "never_reveal": [
+      "the intended root cause",
+      "the correct customer segment",
+      "the final answer or model memo",
+      "student-submittable wording"
+    ]
+  },
+  "levels": {
+    "0": {
+      "name": "Independent attempt",
+      "purpose": "Require a substantive initial diagnostic judgment.",
+      "template": "Start with your own diagnostic judgment. What would you investigate first, and what specific pattern in the churn report makes that a reasonable place to start?"
+    },
+    "1": {
+      "name": "Prompt",
+      "purpose": "Direct attention to available evidence without identifying the answer.",
+      "template": "Look again at the report. Which customer, time, product, or process pattern seems most useful for deciding where to investigate first?"
+    },
+    "2": {
+      "name": "Guiding question",
+      "purpose": "Narrow the diagnostic decision while leaving the choice to the student.",
+      "template": "Would it be more useful to compare who is leaving, when they leave, or what experiences they have before leaving? Choose one and explain what evidence you would look for."
+    },
+    "3": {
+      "name": "Conceptual hint",
+      "purpose": "Name association-versus-causation discipline without applying it to the original case.",
+      "template": "A reported pattern can be a useful diagnostic lead, but it does not by itself establish cause. How could you treat your explanation as a hypothesis and test it with another comparison or source of evidence?"
+    },
+    "4": {
+      "name": "Mini-explanation",
+      "purpose": "Repair the association-versus-causation concept only when the activity explicitly allows Level 4.",
+      "template": "Association means two patterns occur together; causation means one produces the other. In diagnostic analytics, an observed pattern should first guide a follow-up comparison, check, or triangulation step before you claim a cause. Now revise your response by naming the evidence you would use to test your explanation."
+    },
+    "5": {
+      "name": "Similar-not-identical worked example",
+      "purpose": "Use only when explicitly allowed after documented difficulty; the example must not resolve the original case.",
+      "template": "Consider a different subscription business: customers who experience delayed deliveries cancel more often than others. That pattern is a lead, not proof that delays caused cancellation. An analyst might compare cancellation timing, service records, and customer comments before deciding. Now return to the churn case and identify the evidence you would need to test your own hypothesis."
+    },
+    "6": {
+      "name": "Retry original task",
+      "purpose": "Require an independent, evidence-grounded revision.",
+      "template": "Revise your original response now. State the diagnostic question, cite one or two patterns from the report, explain why they are leads rather than proof, and name the next analysis you would perform."
+    }
+  }
+}
