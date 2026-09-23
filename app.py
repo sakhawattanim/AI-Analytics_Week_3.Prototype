@@ -573,7 +573,7 @@ def chat(payload: ChatRequest):
             }
         }
 
-    if (
+if (
         payload.mode == "assessment"
         and activity["type"] == "assessment"
     ):
@@ -598,6 +598,7 @@ def chat(payload: ChatRequest):
                 ]
             }
         }
+
 
     ladder = activity_knowledge.get(
         "practice_ladder",
