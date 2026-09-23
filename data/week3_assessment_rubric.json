@@ -1,0 +1,66 @@
+{
+  "activity_id": "week3_diagnostic_assessment",
+  "title": "Week 3 Diagnostic Analytics Assessment",
+  "learning_objective": "Use evidence from a customer-churn report to frame a diagnostic investigation, distinguish a hypothesis from a causal conclusion, and recommend an appropriate next analysis step.",
+  "assessment_coach_policy": {
+    "default_allowed_levels": [0, 1, 2, 3],
+    "level_4_requires": {
+      "minimum_unsuccessful_attempts": 2,
+      "explicit_activity_permission": true
+    },
+    "level_5_requires": {
+      "minimum_unsuccessful_attempts": 3,
+      "explicit_activity_permission": true
+    },
+    "never_reveal": [
+      "the intended root cause",
+      "the correct customer segment",
+      "the final answer or model memo",
+      "a student-submittable response"
+    ]
+  },
+  "criteria": [
+    {
+      "id": "diagnostic_framing",
+      "label": "Diagnostic framing",
+      "student_must_demonstrate": "Frames the task as investigating why churn changed, rather than only restating that churn declined.",
+      "absent": "Only repeats the result or gives no investigation direction.",
+      "emerging": "States that the company should investigate churn but does not identify a useful diagnostic direction.",
+      "adequate": "Proposes a plausible diagnostic direction such as segment, lifecycle stage, time period, product, payment behavior, or service experience.",
+      "strong": "Frames a focused diagnostic question that could be investigated with the available report."
+    },
+    {
+      "id": "evidence_use",
+      "label": "Use of case evidence",
+      "student_must_demonstrate": "Uses at least one specific, student-visible pattern from the churn report to support a proposed investigation.",
+      "absent": "Makes a claim without referring to case evidence.",
+      "emerging": "Refers generally to the report but does not connect a specific pattern to the proposed investigation.",
+      "adequate": "Uses one specific report pattern and connects it to a reasonable next investigation.",
+      "strong": "Uses two or more relevant patterns, or clearly explains why one pattern is a useful starting point."
+    },
+    {
+      "id": "causal_discipline",
+      "label": "Association versus causation",
+      "student_must_demonstrate": "Treats an observed pattern as a hypothesis or lead, not proof of the root cause.",
+      "absent": "States that an observed pattern proves the cause.",
+      "emerging": "Uses uncertain language but does not explain what should be checked before concluding cause.",
+      "adequate": "Identifies the pattern as a lead and proposes a follow-up analysis or evidence check.",
+      "strong": "Explicitly distinguishes association from causation and names a realistic way to test or triangulate the explanation."
+    },
+    {
+      "id": "next_step",
+      "label": "Appropriate next step",
+      "student_must_demonstrate": "Recommends a feasible analytical next step that a manager or analyst could take.",
+      "absent": "Provides no next step or recommends an action unrelated to diagnosing the decline.",
+      "emerging": "Suggests investigating further without explaining what to examine.",
+      "adequate": "Names a feasible comparison, segmentation, time-based analysis, or evidence check.",
+      "strong": "Names a feasible analysis and explains what result would help distinguish among competing explanations."
+    }
+  ],
+  "instructor_review_triggers": [
+    "The response offers a novel but plausibly defensible explanation not covered by the rubric.",
+    "The system confidence is low.",
+    "The response conflicts with the available case data but may rely on an ambiguous interpretation.",
+    "The student disputes the feedback."
+  ]
+}
